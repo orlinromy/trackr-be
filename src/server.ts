@@ -3,6 +3,7 @@ import cors from "cors";
 import users from "./router/users";
 import sessions from "./router/sessions";
 import jobs from "./router/jobs";
+import ping from "./router/ping";
 import interviews from "./router/interviews";
 import pool from "./db/db";
 import checkTokenValidity from "./middleware/checkTokenValidity";
@@ -42,6 +43,7 @@ class Server {
     this.app.use("/sessions", sessions);
     this.app.use("/jobs", jobs);
     this.app.use("/interviews", interviews);
+    this.app.use("/ping", ping);
   }
 
   public start = (port: number) => {
